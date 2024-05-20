@@ -124,41 +124,15 @@ class _CustomYandexMapState extends State<CustomYandexMap> {
 
   /// Yo'l chizadigan method
   Future<void> makeRoute({Position? start, required Point end}) async {
-    // var route = YandexDriving.requestRoutes(
-    //   drivingOptions: const DrivingOptions(
-    //     routesCount: 3,
-    //     // avoidPoorConditions: true,
-    //   ),
-    //   points: [
-    //     /// Yo'lni boshlanish nuqtasi
-    //     RequestPoint(
-    //         point: Point(
-    //           latitude:  myPosition.latitude,
-    //           longitude: myPosition.longitude,
-    //         ),
-    //         requestPointType: RequestPointType.wayPoint),
-    //
-    //     /// Yo'lni tugash nuqtasi
-    //     RequestPoint(point: end, requestPointType: RequestPointType.wayPoint),
-    //   ],
-    // );
-
     var route = YandexBicycle.requestRoutes(
       bicycleVehicleType: BicycleVehicleType.bicycle,
-      // drivingOptions: const DrivingOptions(
-      //   routesCount: 3,
-      //   // avoidPoorConditions: true,
-      // ),
       points: [
-        /// Yo'lni boshlanish nuqtasi
         RequestPoint(
             point: Point(
               latitude: myPosition.latitude,
               longitude: myPosition.longitude,
             ),
             requestPointType: RequestPointType.wayPoint),
-
-        /// Yo'lni tugash nuqtasi
         RequestPoint(point: end, requestPointType: RequestPointType.wayPoint),
       ],
     );
@@ -177,7 +151,6 @@ class _CustomYandexMapState extends State<CustomYandexMap> {
             strokeWidth: 4,
           ),
         );
-        // mapObjectList.removeRange(1, mapObjectList.length-1);
       }
     }
     setState(() {});
